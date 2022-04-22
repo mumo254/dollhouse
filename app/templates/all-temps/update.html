@@ -1,0 +1,33 @@
+{% extends 'all-temps/base.html' %}
+{% load bootstrap5 %}
+{% block content %}
+<style>
+    .mt{
+        margin-top: 10%;
+    }
+    .ct{
+        width: 40%;
+        padding-left: 10%;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        margin-left: 30%;
+    }
+    .xc{
+        
+    }
+</style>
+<!-- content -->
+<div class="container mt">
+        <div class="form">
+            <h4 class="text-center">Update profile</h4>
+            <form action="" method="POST" class="ct" enctype="multipart/form-data" class="xc">
+                {{ form  }}
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="submit" class="btn btn-outline-info btn-sm" value="Update" />
+                </div>
+            </form>
+        </div>
+</div>
+
+{% endblock%}
