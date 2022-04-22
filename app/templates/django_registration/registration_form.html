@@ -1,7 +1,12 @@
 {%extends "registration/base.html"%} {% load bootstrap5 %}
 {% load static %}
 {% block content %}
-
+<style>
+.content{
+  background-color:#E9D5DA;
+  height:100vh;
+}
+</style>
 
 <div class="content">
   <div class="container">
@@ -10,14 +15,14 @@
       <p>Some Information Might be Incorrect</p>
       {% endif %}
       <div class="col-md-6">
-        <img class="sign" src="{%static 'image/undraw_my_password_re_ydq7.svg' %}" alt=""style="width: 100%; ">
+        <img class="sign" src="{%static 'images/dollhouse6-removebg-preview.png' %}" alt="can't be reached" style="width: 100%;margin: 20px">
       </div>
       <div class="col-md-6 contents">
         <div class="row justify-content-center">
           <div class="col-md-8">
             <div class="mb-4">
             <h3>Register with your Email</h3>
-            <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+            <p class="mb-4">Please enter the required fields to sign in and enjoy more of our products. THANK YOU</p>
           </div>
           <form  method="post">
             {% csrf_token %}
@@ -28,7 +33,7 @@
             </div>
           </form>
           </div>
-          <div class="card" >
+          <div class="card" style="background-color:#E9D5DA; margin-left:50px;margin-right:40px;">
             <p>Already have an account?<a href="/accounts/login/">Login</a></p>
           </div>
         </div>
