@@ -1,0 +1,177 @@
+{%extends 'all-temps/base.html'%} {% load bootstrap5 %}
+{% block content %}
+{% load static %}
+
+<style>
+
+
+  .content{
+  min-height:100vh;
+  width: 100%;
+  background-image:url("{%static 'images/dollhouse9.jpg' %}");
+  background-postion: center;
+  position:relative;
+  
+ }
+ 
+ nav{
+    display:flex;
+    padding:2% 6%;
+    justify-content: space-between;
+    align-items: center;
+ }
+ .nav-links{
+     flex:1;
+     text-align:right;
+ }
+ .nav-links ul li{
+     list-style:none;
+     display:inline-block;
+     padding:8px 12px;
+     position: relative;
+ }
+ .nav-links ul li a{
+     color:black;
+     text-decoration:none;
+     font-size:14px
+ }
+ .nav-links ul li::after{
+     content:'';
+     width:0%;
+     height:2px;
+     background:#E83A14;
+     display:block;
+     margin:auto;
+     transition: 0.5s;
+
+ }
+ .nav-links ul li:hover::after{
+     width:100%;
+
+ }
+.text-box{
+     width:80%;
+     color:#000000;
+     position: absolute;
+     top:50%;
+     left:50%;
+     transform: translate(-50%,-50%);
+     text-align:center;
+
+}
+.text-box h1{
+     font-size:40px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color:#000000;
+}
+.hero-btn{
+      display:inline-block;
+      text-decoration: none;
+      color:#000000;
+      border: 1px solid #000000;
+      padding: 12px 34px;
+      font-size: 13px;
+      background: transparent;
+      position: relative;
+      cursor: pointer;
+}
+.hero-btn:hover{
+     border: 1px solid #5EE6EB;
+     background:#5EE6EB;
+     transition:1s;
+}
+
+nav .fa{
+    display:none
+}
+
+@media(max-width: 700px){
+    .text-box h1{
+        font-size:10px;
+   }
+    .nav-links ul li{
+       display:block;
+   }
+   .nav-links{
+    position:absolute;
+    background: #000000;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right:-200px;
+    text-align:left;
+    z-index: 2;
+}
+nav .fa{
+    display:block;
+    color:#fff;
+    margin: 10px;
+    font-size: 22px;
+    cursor:pointer;
+}
+.nav-links ul{
+    padding: 30px:
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+<div class="content">
+<section class="header" >
+    <nav>
+        <a href="home.html"><img src="{%static 'images/panda2.png' %}" style="width:80px"></a>
+        <P style=" font-size:40px;font-style:italic;color:#000000;">THE HOME OF LOVE</p>
+        <div class="nav-links">
+            <i class="fa fa-times"></i>
+            <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">SHOP</a></li> 
+            <li><a href="">CART</a></li>
+            <li><a href="">ABOUT US</a></li>
+            <li><a href="">CONTACT</a></li>
+            <li><a href="">REGISTER</a></li>
+            <li><a href="">LOGIN</a></li>
+        </ul>
+        </div>
+        <i class="fa fa-bars"></i>
+    </nav>
+  <div class="text-box">
+      <h1>Best home companions and bundles of JOY</h1>
+      <p>Welcome to THE DOLLS HOUSE where you can get the best stuffed animals in KENYA.<br>They will surely 
+          make your room feel warmer.<br> Time to change your HOUSE to a HOME by adding the TOUCH the is missing. </p>
+          <a href="" class="hero-btn">Contact us for more information</a>
+  </div>
+ </section>
+</div>
+{% endblock %}
