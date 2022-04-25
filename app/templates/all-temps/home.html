@@ -84,6 +84,39 @@
      transition:1s;
 }
 
+nav .fa{
+    display:none
+}
+
+@media(max-width: 700px){
+    .text-box h1{
+        font-size:10px;
+   }
+    .nav-links ul li{
+       display:block;
+   }
+   .nav-links{
+    position:absolute;
+    background: #000000;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right:-200px;
+    text-align:left;
+    z-index: 2;
+}
+nav .fa{
+    display:block;
+    color:#fff;
+    margin: 10px;
+    font-size: 22px;
+    cursor:pointer;
+}
+.nav-links ul{
+    padding: 30px:
+}
+}
+
 
 
 
@@ -120,14 +153,18 @@
         <a href="home.html"><img src="{%static 'images/panda2.png' %}" style="width:80px"></a>
         <P style=" font-size:40px;font-style:italic;color:#000000;">THE HOME OF LOVE</p>
         <div class="nav-links">
-        <ul>
+            <i class="fa fa-times"></i>
+            <ul>
             <li><a href="">HOME</a></li>
             <li><a href="">SHOP</a></li> 
             <li><a href="">CART</a></li>
             <li><a href="">ABOUT US</a></li>
             <li><a href="">CONTACT</a></li>
+            <li><a href="">REGISTER</a></li>
+            <li><a href="">LOGIN</a></li>
         </ul>
         </div>
+        <i class="fa fa-bars"></i>
     </nav>
   <div class="text-box">
       <h1>Best home companions and bundles of JOY</h1>
