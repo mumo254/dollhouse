@@ -5,12 +5,13 @@
 <style>
 
 
-  .content{
+  .header{
   min-height:100vh;
   width: 100%;
   background-image:url("{%static 'images/dollhouse9.jpg' %}");
-  background-postion: center;
+  background-postion: cover;
   position:relative;
+
   
  }
  
@@ -88,20 +89,20 @@ nav .fa{
     display:none
 }
 
-@media(max-width: 700px){
+@media(max-width: 1000px){
     .text-box h1{
-        font-size:10px;
+        font-size:50px;
    }
     .nav-links ul li{
        display:block;
    }
    .nav-links{
     position:absolute;
-    background: #000000;
+    background: #4700D8;
     height: 100vh;
-    width: 200px;
+    width: 400px;
     top: 0;
-    right:-200px;
+    right:-400px;
     text-align:left;
     z-index: 2;
     transition:1s;
@@ -148,22 +149,102 @@ nav .fa{
     display: inline-flex;
     flex-direction:row; 
     justify-content: space-between;
-    background-color:aqua;
+   
     }
+.course-col{
+    flex-basis:31%;
+    background:#fff3f3;
+    border-radius:10px;
+    margin-bottom:5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
 
-{% comment %} .course{
+}
+h3{
+    text-align:center;
+    font-weight: 500;
+    margin: 10px 0;
+}
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+@media(max-width: 1000px){
+    .row{flex-direction:column;
+    }
+}
+
+
+/*---------products-------*/
+.products{
+    width:8o%;
+    margin:auto;
+    text-align: center;
+    padding-top: 50px;
+
+}
+.products-col{
+    flex-basis: 32%;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.products-col img{
+    width:100%;
+    display: block; 
+}
+.layer{
+    background:transparent;
+    height:100%;
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    transition:0.2s;
+}
+.layer:hover{
+    background:rgba(0,0,255,0.3);
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color:#fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position:absolute;
+    opacity:0;
+    transition:0.5s;
+}
+.layer:hover h3{
+    bottom:49%;
+    opacity:1;
+}
+
+/*-----gallery-----*/
+.gallery{
+    width:80%;
+    margin:auto;
+    text-align:center;
+    padding-top: 100px;
+}
+.gallery-row{
+    width:100%;
+    min-height:100vh;
     display:flex;
-
-} {% endcomment %}
-
-
-
-
-
-
-
-
-
+    align-items:center;
+    justify-content:center;
+    padding:50px 8%;
+}
+.gallery-col{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+.gallery img{
+    width:100%;
+}
 
 
 
@@ -182,10 +263,11 @@ nav .fa{
 
 
 <div class="content">
+    <!-----------Header section--------->
 <section class="header" >
     <nav>
         <a href="home.html"><img src="{%static 'images/panda2.png' %}" style="width:80px"></a>
-        <P style=" font-size:40px;font-style:italic;color:#000000;">THE HOME OF LOVE</p>
+        <P style=" font-size:40px;font-style:italic;color:#000000;">THE AFRICAN HOME OF LOVE</p>
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul>
@@ -206,22 +288,9 @@ nav .fa{
           make your room feel warmer.<br> Time to change your HOUSE to a HOME by adding the TOUCH the is missing. </p>
           <a href="" class="hero-btn">Contact us for more information</a>
   </div>
- 
- <!---- javascript for Toogle menu ---->
- <script>
-     var navLinks = document.getElementById("navLinks");
-     fuction showMenu(){
-         navLinks.style.right = "0";
-     }
-     function hideMenu(){
-         navLinks.style.right = "-200px";
-     }
- </script>
-</div>
 </section>
 
-
-<!-----course----->
+  <!-----------course-------------->
 <section class="course">
     <h1>Our products and Services</h1><br>
     <p>Products and services you can enjoy within A dollhouse</p>
@@ -240,13 +309,102 @@ nav .fa{
        </div>
    
       <div class="course-col">
-        <h3>services</h3>
+        <h3>location</h3>
         <p>  Deserunt labore pariatur aute ex mollit eu culpa. Non do minim nostrud ullamco amet nostrud est duis.<br>
               Incididunt mollit enim magna proident fugiat consectetur laborum nulla.</p>
     </div>
    </div>
 
+</section>
 
+<!----------------our products-------------->
+<section class="products">
+    <h1>Our best selling products</h1>
+    <p>Consequat minim id ut aute aliquip culpa.</p>
+      <div class="row">
+          <div class="products-col">
+              <img src="{%static 'images/dollhouse3.jpg' %}" alt="error">
+              <div class="layer">
+                  <h3>NAIROBI</h3>
+              </div>
+          </div>
+
+          <div class="products-col">
+            <img src="{%static 'images/africanhandbag.jpeg' %}" alt="error" style="height:45vh;">
+            <div class="layer">
+                <h3>Nakuru</h3>
+            </div>
+        </div>
+
+        <div class="products-col">
+            <img src="{%static 'images/jewellary3.jpg' %}" alt="error">
+            <div class="layer">
+                <h3>Mombasa</h3>
+            </div>
+        </div>
+
+      </div>
 
 </section>
+
+
+<section class="gallery">
+    <h3>our galllery</h3>
+    <p>Velit elit magna aliquip esse amet commodo esse anim occaecat.</p>
+
+    <div class="row">
+        <div class="gallery-col">
+            <a href="{%static 'images/masaishuka.jpeg' %}" data-lightbox="models" data-title="caption1">
+             <img src="{%static 'images/masaishuka.jpeg' %}" alt="error">
+            </a>
+           
+            <a href="{%static 'images/africanhandbag2.jpeg' %}" data-lightbox="models" data-title="caption1">
+                <img src="{%static 'images/africanhandbag2.jpeg' %}" alt="error">
+               </a>
+            
+               <a href="{%static 'images/jewellary3.jpg' %}" data-lightbox="models" data-title="caption1">
+                <img src="{%static 'images/jewellary3.jpg' %}" alt="error">
+               </a>
+
+               <a href="{%static 'images/kenyanjewellary2.jpeg' %}"  style="height:30vh;" data-lightbox="models" data-title="caption1">
+                <img src="{%static 'images/kenyanjewellary2.jpeg' %}" alt="error">
+               </a>
+            
+               <a href="{%static 'images/dollhouse4.jpg' %}" data-lightbox="models" data-title="caption1">
+                <img src="{%static 'images/dollhouse4.jpg' %}" alt="error">
+               </a>
+
+               <a href="{%static 'images/masaishuka.jpg' %}" data-lightbox="models" data-title="caption1">
+                <img src="{%static 'images/masaishuka.jpg' %}" alt="error">
+               </a>
+              
+            
+
+        </div>
+
+    </div>
+<script src="lightbox-plus-jquery.js"></script>
+</section>
+
+
+
+ <!---- javascript for Toogle menu ---->
+ <script>
+     var navLinks = document.getElementById("navLinks");
+     function showMenu(){
+         navLinks.style.right = "0";
+     }
+     function hideMenu(){
+         navLinks.style.right = "-400px";
+     }
+ </script>
+
+
+
+
+
+
+
+
+</div>
 {% endblock %}
