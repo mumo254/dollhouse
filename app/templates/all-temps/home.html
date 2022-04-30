@@ -334,7 +334,25 @@ transition:0.5s;
         font-size:24px;
     }
 }
-
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+.icons .fa{
+    color: #f44336;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+.fa-gratipay{
+     color: #f44336;
+}
 
 
 
@@ -350,7 +368,7 @@ transition:0.5s;
 <section class="header" >
     <nav>
         <a href="home.html"><img src="{%static 'images/panda2.png' %}" style="width:80px"></a>
-        <P style=" font-size:40px;font-style:italic;color:#000000;">THE AFRICAN HOME OF LOVE</p>
+        <P style=" font-size:40px;font-style:italic;color:#000000;">SHULLY COLLECTION</p>
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul>
@@ -403,26 +421,26 @@ transition:0.5s;
 <!----------------our products-------------->
 <section class="products">
     <h1>Our best selling products</h1>
-    <p>Consequat minim id ut aute aliquip culpa.</p>
+    <p>Below are some of the best selling products in a Dollhouse</p>
       <div class="row">
           <div class="products-col">
               <img src="{%static 'images/dollhouse3.jpg' %}" alt="error">
               <div class="layer">
-                  <h3>NAIROBI</h3>
+                  <h3>Dolls</h3>
               </div>
           </div>
 
           <div class="products-col">
             <img src="{%static 'images/africanhandbag.jpeg' %}" alt="error" style="height:45vh;">
             <div class="layer">
-                <h3>Nakuru</h3>
+                <h3>African bags</h3>
             </div>
         </div>
 
         <div class="products-col">
             <img src="{%static 'images/jewellary3.jpg' %}" alt="error">
             <div class="layer">
-                <h3>Mombasa</h3>
+                <h3>african jewellary</h3>
             </div>
         </div>
 
@@ -525,10 +543,17 @@ transition:0.5s;
  <!---------- footer---------->
  <section class="footer">
      <h4>About us</h4>
-     <p>Lorem sint dolor id cupidatat do elit eu. Nisi ad cupidatat quis veniam culpa minim in. 
-         Adipisicing duis laborum reprehenderit cillum excepteur anim eiusmod Lorem Lorem quis aliquip adipisicing. Et ex nisi ad nostrud nulla qui sunt laborum minim veniam culpa exercitation excepteur.
-         Aliquip non pariatur irure id incididunt qui commodo dolore ea consequat duis culpa ea cillum.</p>
-
+     <p>Lorem sint dolor id cupidatat do elit eu. Nisi ad cupidatat quis veniam culpa minim in. <br>
+         Adipisicing duis laborum reprehenderit cillum excepteur anim eiusmod Lorem Lorem quis aliquip adipisicing.<br>  Et ex nisi ad nostrud nulla qui sunt laborum minim veniam culpa exercitation excepteur.<br>
+    </p>
+    <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
+        
+    </div>
+  <p>Made with <i class="fa fa-gratipay"></i> by Mumo254</p>
  </section>
 
 
