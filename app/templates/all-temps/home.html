@@ -96,24 +96,27 @@ nav .fa{
    }
     .nav-links ul li{
        display:block;
+       
    }
    .nav-links{
     position:absolute;
-    background: #4700D8;
+    background: #6A67CE;
     height: 100vh;
-    width: 400px;
+    width: 200px;
     top: 0;
     right:-400px;
     text-align:left;
     z-index: 2;
     transition:1s;
+   
   }
 nav .fa{
     display:block;
-    color:#fff;
+    color:#000000;
     margin: 10px;
     font-size: 22px;
     cursor:pointer;
+    
   }
 .nav-links ul{
     padding: 30px;
@@ -121,7 +124,7 @@ nav .fa{
     margin: 10px;
     font-size: 22px;
     cursor:pointer;
-    
+  
    }
 }
 
@@ -381,7 +384,7 @@ transition:0.5s;
             <li><a href="">SHOP</a></li> 
             <li><a href="">CART</a></li>
             <li><a href="{% url 'about' %}">ABOUT US</a></li>
-            <li><a href="">CONTACT US</a></li>
+            <li><a href="{% url 'contact' %}">CONTACT US</a></li>
             <li><a href="/accounts/register/">REGISTER</a></li>
             <li><a href="/accounts/login/">LOGIN</a></li>
         </ul>
@@ -392,7 +395,7 @@ transition:0.5s;
       <h1>Shully collection</h1>
       <p>Welcome to Shully collection where you can get the best stuffed animals in KENYA.<br>They will surely 
           make your room feel warmer.<br> Time to change your HOUSE to a HOME by adding the TOUCH the is missing. </p>
-          <a href="{% url 'about' %}" class="hero-btn">Contact us for more information</a>
+          <a href="{% url 'contact' %}" class="hero-btn">Contact us for more information</a>
   </div>
 </section>
 

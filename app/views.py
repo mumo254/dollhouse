@@ -13,6 +13,10 @@ def about(request):
     
     return render (request, "all-temps/about.html")
 
+def contact(request):
+    
+    return render (request, "all-temps/contact.html")
+
 
 @login_required(login_url="/accounts/login/")
 def create_profile(request):

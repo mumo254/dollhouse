@@ -129,9 +129,9 @@
     position:absolute;
     background: #4700D8;
     height: 100vh;
-    width: 400px;
+    width: 200px;
     top: 0;
-    right:-400px;
+    right:-200px;
     text-align:left;
     z-index: 2;
     transition:1s;
@@ -168,7 +168,7 @@ nav .fa{
             <li><a href="">SHOP</a></li> 
             <li><a href="">CART</a></li>
             <li><a href="{% url 'about' %}">ABOUT US</a></li>
-            <li><a href="">CONTACT</a></li>
+            <li><a href="{% url 'contact' %}">CONTACT us</a></li>
             <li><a href="/accounts/register/">REGISTER</a></li>
             <li><a href="/accounts/login/">LOGIN</a></li>
         </ul>
