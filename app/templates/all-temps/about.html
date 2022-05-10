@@ -119,8 +119,45 @@
 .about-col p{
     padding: 15px 0 25px;
 }
+@media(max-width: 1000px){
+   
+    .nav-links ul li{
+       display:block;
+       overflow:hidden;
+   }
+   .nav-links{
+    position:absolute;
+    background: #4700D8;
+    height: 100vh;
+    width: 400px;
+    top: 0;
+    right:-400px;
+    text-align:left;
+    z-index: 2;
+    transition:1s;
+    overflow:hidden;
+  }
+nav .fa{
+    display:block;
+    color:#fff;
+    margin: 10px;
+    font-size: 22px;
+    cursor:pointer;
+  }
+.nav-links ul{
+    padding: 30px;
+    color: #fff;
+    margin: 10px;
+    font-size: 22px;
+    cursor:pointer;
+    
+   }
+   .navbar .nav-collapse {
+    display:none;
+  }
+}
 </style>
-
+<div class="content">
 <section class="sub-header" >
     <nav>
         <a href="home.html"><img src="{%static 'images/logo-removebg-preview.png' %}" style="width:300px"></a>
@@ -176,6 +213,17 @@
   <p style="color:white;">Made with <i class="fa fa-gratipay"></i> by Mumo254</p>
  </section>
 
+ <script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-400px";
+    }
+</script>
+
+</div>
 
 
 {% endblock %}

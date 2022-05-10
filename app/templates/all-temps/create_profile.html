@@ -1,16 +1,19 @@
-
-  
 {%extends "registration/base.html" %}
 {% load static %}
 {% load bootstrap5 %}
-
 {% block content %}
-<br><br><br> <br>
+
 <style>
+   .content{
+       height:100vh;
+       width:100%;
+       background-color:#C4DDFF;
+       overflow-x: hidden;
+   }
     .card {
         padding: 4%;
         border-radius: 10%;
-        background: linear-gradient(to top left, #f19ee6, #99f048);
+        background: linear-gradient(to bottom right, #7FB5FF, #001D6E);
         filter: drop-shadow(2px 4px 8px #585858);
     }
     .card:hover {
@@ -25,15 +28,16 @@
         border-bottom: .5px solid black;
     }
 </style> 
-
-<div class="container mt-5" style="align-items:center; width:60%">
+<section class="content">
+  <div class="container mt-5" style=" align-items:center; width:60%;" >
     <div class="card">
+        <img src="{% static 'images/logo-removebg-preview.png' %}" alt="can't be reached" style="width: 50%; margin-top:2%; margin-left:20%;height:30vh;">
         <div class="row">
-            <div class="col-md-6" style="width: 100%; padding:10%;">
+            <div class="col-md-6" style="width: 100%; padding:5%;">
                 
                 <div class="input">
                     <div class="text-center">
-                        <div class="title">Create a profile to start using dollhouse products.</div>
+                        <div class="title">Create your profile to start using dollhouse products.</div>
                         <hr />
                         <div class="guide">
                             Please add an image for your profile picture, a bio and your contact.
@@ -51,5 +55,6 @@
             </div>
         </div>
     </div>
-</div> 
+  </div> 
+</section>
 {% endblock %}
