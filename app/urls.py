@@ -10,4 +10,5 @@ urlpatterns = [
     path('update_profile/<int:id>', views.update_profile, name='update_profile'),
     path('profile/', views.profile, name='profile'),
     path('accounts/profile/', views.profile, name='profile'),
+    path('about/', views.about, name='about'),
 ]

@@ -8,9 +8,10 @@
   .header{
   min-height:100vh;
   width: 100%;
-  background-image:url("{%static 'images/dollhouse9.jpg' %}");
+  background-image:url("https://images.pexels.com/photos/704987/pexels-photo-704987.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-postion: cover;
   position:relative;
+  background-repeat:no-repea
 
   
  }
@@ -334,15 +335,20 @@ transition:0.5s;
         font-size:24px;
     }
 }
+
+/*------------footer-----------*/
+
 .footer{
     width: 100%;
     text-align: center;
     padding: 30px 0;
+    
 }
 .footer h4{
     margin-bottom: 25px;
     margin-top: 20px;
     font-weight: 500;
+
 }
 .icons .fa{
     color: #f44336;
@@ -367,27 +373,26 @@ transition:0.5s;
     <!-----------Header section--------->
 <section class="header" >
     <nav>
-        <a href="home.html"><img src="{%static 'images/panda2.png' %}" style="width:80px"></a>
-        <P style=" font-size:40px;font-style:italic;color:#000000;">SHULLY COLLECTION</p>
+        <a href="home.html"><img src="{%static 'images/logo-removebg-preview.png' %}" style="width:300px"></a>
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul>
             <li><a href="/">HOME</a></li>
             <li><a href="">SHOP</a></li> 
             <li><a href="">CART</a></li>
-            <li><a href="">ABOUT US</a></li>
+            <li><a href="{% url 'about' %}">ABOUT US</a></li>
             <li><a href="">CONTACT</a></li>
-            <li><a href="http://127.0.0.1:8000/accounts/register/">REGISTER</a></li>
-            <li><a href="http://127.0.0.1:8000/accounts/login/">LOGIN</a></li>
+            <li><a href="/accounts/register/">REGISTER</a></li>
+            <li><a href="/accounts/login/">LOGIN</a></li>
         </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
   <div class="text-box">
-      <h1>Best home companions and bundles of JOY</h1>
-      <p>Welcome to THE DOLLS HOUSE where you can get the best stuffed animals in KENYA.<br>They will surely 
+      <h1>Shully collection</h1>
+      <p>Welcome to Shully collection where you can get the best stuffed animals in KENYA.<br>They will surely 
           make your room feel warmer.<br> Time to change your HOUSE to a HOME by adding the TOUCH the is missing. </p>
-          <a href="" class="hero-btn">Contact us for more information</a>
+          <a href="{% url 'about' %}" class="hero-btn">Contact us for more information</a>
   </div>
 </section>
 
@@ -537,13 +542,13 @@ transition:0.5s;
 
 <section class="cta">
     <h1>Get our products at the comfort of your home <br>and enjoy all that dollhouse has to offer.</h1>
-    <a href="" class="hero-btn2">CONTACT US</a>
+    <a href="{% url 'about' %}" class="hero-btn2">CONTACT US</a>
 </section>
 
  <!---------- footer---------->
  <section class="footer">
      <h4>About us</h4>
-     <p>Lorem sint dolor id cupidatat do elit eu. Nisi ad cupidatat quis veniam culpa minim in. <br>
+     <p style="color:white;">Lorem sint dolor id cupidatat do elit eu. Nisi ad cupidatat quis veniam culpa minim in. <br>
          Adipisicing duis laborum reprehenderit cillum excepteur anim eiusmod Lorem Lorem quis aliquip adipisicing.<br>  Et ex nisi ad nostrud nulla qui sunt laborum minim veniam culpa exercitation excepteur.<br>
     </p>
     <div class="icons">
@@ -553,7 +558,7 @@ transition:0.5s;
         <i class="fa fa-linkedin"></i>
         
     </div>
-  <p>Made with <i class="fa fa-gratipay"></i> by Mumo254</p>
+  <p style="color:white;">Made with <i class="fa fa-gratipay"></i> by Mumo254</p>
  </section>
 
 

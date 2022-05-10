@@ -1,0 +1,181 @@
+{%extends 'all-temps/base.html'%} {% load bootstrap5 %}
+{% block content %}
+{% load static %}
+
+<style>
+
+    .sub-header{
+        height:65vh;
+        width: 100%;
+        background-image:url('https://wallpapercave.com/wp/wp7260978.jpg');
+        background-postion: center;
+        background-size: cover;
+        text-align:center;
+        color:white;
+       }
+
+       .sub-header h1{
+           margin-top: 10px;
+           color:#001D6E;
+       }
+       
+       nav{
+          display:flex;
+          padding:2% 6%;
+          justify-content: space-between;
+          align-items: center;
+       }
+       .nav-links{
+           flex:1;
+           text-align:right;
+       }
+       .nav-links ul li{
+           list-style:none;
+           display:inline-block;
+           padding:8px 12px;
+           position: relative;
+       }
+       .nav-links ul li a{
+           color:#001D6E;
+           text-decoration:none;
+           font-size:14px
+       }
+       .nav-links ul li::after{
+           content:'';
+           width:0%;
+           height:2px;
+           background:#E83A14;
+           display:block;
+           margin:auto;
+           transition: 0.5s;
+      
+       }
+       .nav-links ul li:hover::after{
+           width:100%;
+         }
+ 
+ 
+ .hero-btn{
+       display:inline-block;
+       text-decoration: none;
+       color:#000000;
+       border: 1px solid #000000;
+       padding: 12px 34px;
+       font-size: 13px;
+       background: transparent;
+       position: relative;
+       cursor: pointer;
+ }
+ .hero-btn:hover{
+      border: 1px solid #5EE6EB;
+      background:orange;
+      transition:1s;
+ }
+ 
+ nav .fa{
+     display:none
+ }
+ /*------footer-------*/
+ .footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 500;
+
+}
+.icons .fa{
+    color: #f44336;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+.fa-gratipay{
+     color: #f44336;
+}
+
+.about-us{
+    width:80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    display:flex;
+  
+
+
+}
+.about-col{
+    flex-basis: 48%;
+    padding: 30px 2px;
+    
+}
+.about-col img{
+    width: 100%;
+}
+.about-col p{
+    padding: 15px 0 25px;
+}
+</style>
+
+<section class="sub-header" >
+    <nav>
+        <a href="home.html"><img src="{%static 'images/logo-removebg-preview.png' %}" style="width:300px"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="">SHOP</a></li> 
+            <li><a href="">CART</a></li>
+            <li><a href="{% url 'about' %}">ABOUT US</a></li>
+            <li><a href="">CONTACT</a></li>
+            <li><a href="/accounts/register/">REGISTER</a></li>
+            <li><a href="/accounts/login/">LOGIN</a></li>
+        </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+  <h1>About us</h1>
+</section>
+
+<!------about us content---->
+
+<section class="about-us" >
+    <div class="row">
+        <div class="about-col" >
+            <h1>Do velit enim irure aute ex minim.</h1>
+            <p>Qui qui officia ex nostrud ullamco cillum. Reprehenderit do minim ad proident quis adipisicing pariatur officia ex do ex fugiat. <br>
+                Do irure nulla exercitation aliquip aliqua in aute aliqua sint sit laborum occaecat.</p>
+                <a href="" class="hero-btn">EXPLORE NOW</a>
+            </div>
+                <div class="about-col" >
+                    <img src="{%static 'images/africa6.jpg'%}" alt=error >
+                </div>
+       
+    </div> 
+
+</section>
+
+
+
+<section class="footer">
+     <h4>About us</h4>
+     <p style="color:white;">Lorem sint dolor id cupidatat do elit eu. Nisi ad cupidatat quis veniam culpa minim in. <br>
+         Adipisicing duis laborum reprehenderit cillum excepteur anim eiusmod Lorem Lorem quis aliquip adipisicing.<br>  Et ex nisi ad nostrud nulla qui sunt laborum minim veniam culpa exercitation excepteur.<br>
+    </p>
+    <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
+        
+    </div>
+  <p style="color:white;">Made with <i class="fa fa-gratipay"></i> by Mumo254</p>
+ </section>
+
+
+
+{% endblock %}

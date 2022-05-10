@@ -9,6 +9,10 @@ def home(request):
     
     return render(request, "all-temps/home.html")
 
+def about(request):
+    
+    return render (request, "all-temps/about.html")
+
 
 @login_required(login_url="/accounts/login/")
 def create_profile(request):
