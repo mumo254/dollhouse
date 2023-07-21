@@ -69,3 +69,4 @@ def update_profile(request, id):
         "profile":profile,
         }
     return render(request, 'all-temps/update.html', ctx)
+

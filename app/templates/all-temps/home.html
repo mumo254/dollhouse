@@ -1,371 +1,385 @@
-{%extends 'all-temps/base.html'%} {% load bootstrap5 %}
-{% block content %}
-{% load static %}
+{%extends 'all-temps/base.html'%} {% load bootstrap5 %} {% block content %} {% load static %}
 
 <style>
-
-
-  .header{
-  min-height:100vh;
-  width: 100%;
-  background-image:url("https://images.pexels.com/photos/704987/pexels-photo-704987.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  background-postion: cover;
-  position:relative;
-  background-repeat:no-repea
-
-  
- }
- 
- nav{
-    display:flex;
-    padding:1% 6%;
-    justify-content: space-between;
-    align-items: center;
- }
- .nav-links{
-     flex:1;
-     text-align:right;
- }
- .nav-links ul li{
-     list-style:none;
-     display:inline-block;
-     padding:8px 12px;
-     position: relative;
- }
- .nav-links ul li a{
-     color:black;
-     text-decoration:none;
-     font-size:14px
- }
- .nav-links ul li::after{
-     content:'';
-     width:0%;
-     height:2px;
-     background:#E83A14;
-     display:block;
-     margin:auto;
-     transition: 0.5s;
-
- }
- .nav-links ul li:hover::after{
-     width:100%;
-
- }
-.text-box{
-     width:80%;
-     color:#000000;
-     position: absolute;
-     top:50%;
-     left:50%;
-     transform: translate(-50%,-50%);
-     text-align:center;
-
-}
-.text-box h1{
-     font-size:40px;
-}
-.text-box p{
-    margin: 10px 0 40px;
-    font-size: 14px;
-    color:#000000;
-}
-.hero-btn{
-      display:inline-block;
-      text-decoration: none;
-      color:#000000;
-      border: 1px solid #000000;
-      padding: 12px 34px;
-      font-size: 13px;
-      background: transparent;
-      position: relative;
-      cursor: pointer;
-}
-.hero-btn:hover{
-     border: 1px solid #5EE6EB;
-     background:#5EE6EB;
-     transition:1s;
-}
-
-nav .fa{
-    display:none
-}
-
-@media(max-width: 1000px){
-    .text-box h1{
-        font-size:50px;
-   }
-    .nav-links ul li{
-       display:block;
-       
-   }
-   .nav-links{
-    position:absolute;
-    background: #6A67CE;
-    height: 100vh;
-    width: 200px;
-    top: 0;
-    right:-400px;
-    text-align:left;
-    z-index: 2;
-    transition:1s;
-   
-  }
-nav .fa{
-    display:block;
-    color:#000000;
-    margin: 10px;
-    font-size: 22px;
-    cursor:pointer;
+    .header {
+        min-height: 100vh;
+        width: 100%;
+        background-image: url("https://images.pexels.com/photos/704987/pexels-photo-704987.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        background-postion: cover;
+        position: relative;
+        background-repeat: no-repea
+    }
     
-  }
-.nav-links ul{
-    padding: 30px;
-    color: #fff;
-    margin: 10px;
-    font-size: 22px;
-    cursor:pointer;
-  
-   }
-}
-
-/*-----course----*/
-.course{
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 100px;
-}
- .course h1{
-    font-size:36px;
-    font-weight:500;
-}
-.course p{
-    color:#000000;
-    font-size: 17px;
-    font-weight: 300;
-    line-height: 22px;
-    padding:10px;
-}
-
-
-  .row{
-    margin-top: 5%;
-    display: inline-flex;
-    flex-direction:row; 
-    justify-content: space-between;
-   
+    nav {
+        display: flex;
+        padding: 1% 6%;
+        justify-content: space-between;
+        align-items: center;
     }
-.course-col{
-    flex-basis:31%;
-    background:#fff3f3;
-    border-radius:10px;
-    margin-bottom:5%;
-    padding: 20px 12px;
-    box-sizing: border-box;
-
-}
-h3{
-    text-align:center;
-    font-weight: 500;
-    margin: 10px 0;
-}
-.course-col:hover{
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
-}
-@media(max-width: 1000px){
-    .row{flex-direction:column;
+    
+    .nav-links {
+        flex: 1;
+        text-align: right;
     }
-}
-
-
-/*---------products-------*/
-.products{
-    width:8o%;
-    margin:auto;
-    text-align: center;
-    padding-top: 50px;
-
-}
-.products-col{
-    flex-basis: 32%;
-    border-radius: 30px;
-    margin-bottom: 30px;
-    position: relative;
-    overflow: hidden;
-}
-.products-col img{
-    width:100%;
-    display: block; 
-}
-.layer{
-    background:transparent;
-    height:100%;
-    width:100%;
-    position: absolute;
-    top:0;
-    left:0;
-    transition:0.2s;
-}
-.layer:hover{
-    background:rgba(0,0,255,0.3);
-}
-.layer h3{
-    width: 100%;
-    font-weight: 500;
-    color:#fff;
-    font-size: 26px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    position:absolute;
-    opacity:0;
-    transition:0.5s;
-}
-.layer:hover h3{
-    bottom:49%;
-    opacity:1;
-}
-
-/*-----gallery-----*/
-.gallery{
-    width:80%;
-    margin:auto;
-    text-align:center;
-    padding-top: 100px;
-}
-.gallery-row{
-    width:100%;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:50px 8%;
-}
-.gallery-col{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 30px;
-}
-.gallery img{
-    width:100%;
-}
-/*-------testimonials-----*/
-
-.testimonials{
-    width:80%;
-    margin: auto;
-    padding-top: 100px;
-    text-align: center;
-    margin-top: 60px;
-
-}
-.testimonials-col{
-    flex-basis: 44%;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    text-align: left;
-    background: #fff3f3;
-    padding: 25px;
-    cursor: pointer;
-    display: flex;
-    box-sizing: border-box;
-}
-.testimonials-col:hover{
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.8);
-}
-.testimonials-col img{
-    height: 40px;
-    margin-left: 5px;
-    margin-right: 30px;
-    border-radius: 50%;
-
-}
-.testimonials-col p{
-    padding:0;
-}
-.testimonials-col h3{
-   margin-top:15px;
-   text-align: left;
-   font-size: 20px;
-}
-.testimonials-col .fa{
-    color:#f44336;
-}
-@media( max-width: 1000px){
-    .testimonials-col img{
-        margin-left: 0px;
-        margin-right: 15px;
+    
+    .nav-links ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+    }
+    
+    .nav-links ul li a {
+        color: black;
+        text-decoration: none;
+        font-size: 14px
+    }
+    
+    .nav-links ul li::after {
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: #E83A14;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+    }
+    
+    .nav-links ul li:hover::after {
+        width: 100%;
+    }
+    
+    .text-box {
+        width: 80%;
+        color: #000000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    
+    .text-box h1 {
+        font-size: 40px;
+    }
+    
+    .text-box p {
+        margin: 10px 0 40px;
+        font-size: 14px;
+        color: #000000;
+    }
+    
+    .hero-btn {
+        display: inline-block;
+        text-decoration: none;
+        color: #000000;
+        border: 1px solid #000000;
+        padding: 12px 34px;
+        font-size: 13px;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .hero-btn:hover {
+        border: 1px solid #5EE6EB;
+        background: #5EE6EB;
+        transition: 1s;
+    }
+    
+    nav .fa {
+        display: none
+    }
+    
+    @media(max-width: 1000px) {
+        .text-box h1 {
+            font-size: 50px;
+        }
+        .nav-links ul li {
+            display: block;
+        }
+        .nav-links {
+            position: absolute;
+            background: #6A67CE;
+            height: 100vh;
+            width: 200px;
+            top: 0;
+            right: -400px;
+            text-align: left;
+            z-index: 2;
+            transition: 1s;
+        }
+        nav .fa {
+            display: block;
+            color: #000000;
+            margin: 10px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+        .nav-links ul {
+            padding: 30px;
+            color: #fff;
+            margin: 10px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+    }
+    /*-----course----*/
+    
+    .course {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 100px;
+    }
+    
+    .course h1 {
+        font-size: 36px;
+        font-weight: 500;
+    }
+    
+    .course p {
+        color: #000000;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 22px;
+        padding: 10px;
+    }
+    
+    .row {
+        margin-top: 5%;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .course-col {
+        flex-basis: 31%;
+        background: #fff3f3;
+        border-radius: 10px;
+        margin-bottom: 5%;
+        padding: 20px 12px;
+        box-sizing: border-box;
+    }
+    
+    h3 {
+        text-align: center;
+        font-weight: 500;
+        margin: 10px 0;
+    }
+    
+    .course-col:hover {
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+    }
+    
+    @media(max-width: 1000px) {
+        .row {
+            flex-direction: column;
+        }
+    }
+    /*---------products-------*/
+    
+    .products {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 50px;
+    }
+    
+    .products-col {
+        flex-basis: 32%;
+        border-radius: 30px;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .products-col img {
+        width: 100%;
+        display: block;
+    }
+    
+    .layer {
+        background: transparent;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.2s;
+    }
+    
+    .layer:hover {
+        background: rgba(0, 0, 255, 0.3);
+    }
+    
+    .layer h3 {
+        width: 100%;
+        font-weight: 500;
+        color: #fff;
+        font-size: 26px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    
+    .layer:hover h3 {
+        bottom: 49%;
+        opacity: 1;
+    }
+    /*-----gallery-----*/
+    
+    .gallery {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 100px;
+    }
+    
+    .gallery-row {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 8%;
+    }
+    
+    .gallery-col {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 30px;
+    }
+    
+    .gallery img {
+        width: 100%;
+    }
+    /*-------testimonials-----*/
+    
+    .testimonials {
+        width: 80%;
+        margin: auto;
+        padding-top: 100px;
+        text-align: center;
+        margin-top: 60px;
+    }
+    
+    .testimonials-col {
+        flex-basis: 44%;
+        border-radius: 10px;
+        margin-bottom: 5%;
+        text-align: left;
+        background: #fff3f3;
+        padding: 25px;
+        cursor: pointer;
+        display: flex;
+        box-sizing: border-box;
+    }
+    
+    .testimonials-col:hover {
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.8);
+    }
+    
+    .testimonials-col img {
+        height: 40px;
+        margin-left: 5px;
+        margin-right: 30px;
         border-radius: 50%;
-
-}
-}
-/*------call to action----*/
-.cta{
-    margin: 100px auto;
-    width: 80%;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url({%static 'images/africa4.jpg' %});
-    background-postion:center;
-    background-size:cover;
-    border-radius:10px;
-    text-align: center;
-    padding: 100px 0;
-}
-.cta h1{
-    color: #fff;
-    margin-bottom: 40px;
-    padding: 0;
-}
-.hero-btn2{
-display:inline-block;
-text-decoration: none;
-color:white;
-border: 1px solid white;
-padding: 12px 34px;
-font-size: 15px;
-font-weight:500;
-background: transparent;
-position: relative;
-cursor: pointer;
-}
-
-.hero-btn2:hover{
-border: 1px solid #56BBF1;
-background:white;
-transition:0.5s;
-}
-@media(max-width: 1000px){
-    .cta h1{
-        font-size:24px;
     }
-}
-
-/*------------footer-----------*/
-
-.footer{
-    width: 100%;
-    text-align: center;
-    padding: 30px 0;
     
-}
-.footer h4{
-    margin-bottom: 25px;
-    margin-top: 20px;
-    font-weight: 500;
-
-}
-.icons .fa{
-    color: #f44336;
-    margin: 0 13px;
-    cursor: pointer;
-    padding: 18px 0;
-}
-.fa-gratipay{
-     color: #f44336;
-}
-
-
-
-
+    .testimonials-col p {
+        padding: 0;
+    }
+    
+    .testimonials-col h3 {
+        margin-top: 15px;
+        text-align: left;
+        font-size: 20px;
+    }
+    
+    .testimonials-col .fa {
+        color: #f44336;
+    }
+    
+    @media( max-width: 1000px) {
+        .testimonials-col img {
+            margin-left: 0px;
+            margin-right: 15px;
+            border-radius: 50%;
+        }
+    }
+    /*------call to action----*/
+    
+    <!-- .cta {
+        margin: 100px auto;
+        width: 80%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)),
+        url({%static '' %});
+        background-postion: center;
+        background-size: cover;
+        border-radius: 10px;
+        text-align: center;
+        padding: 100px 0;
+    }
+    
+    -->.cta h1 {
+        color: #fff;
+        margin-bottom: 40px;
+        padding: 0;
+    }
+    
+    .hero-btn2 {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        border: 1px solid white;
+        padding: 12px 34px;
+        font-size: 15px;
+        font-weight: 500;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .hero-btn2:hover {
+        border: 1px solid #56BBF1;
+        background: white;
+        transition: 0.5s;
+    }
+    
+    @media(max-width: 1000px) {
+        .cta h1 {
+            font-size: 24px;
+        }
+    }
+    /*------------footer-----------*/
+    
+    .footer {
+        width: 100%;
+        text-align: center;
+        padding: 30px 0;
+    }
+    
+    .footer h4 {
+        margin-bottom: 25px;
+        margin-top: 20px;
+        font-weight: 500;
+    }
+    
+    .icons .fa {
+        color: #f44336;
+        margin: 0 13px;
+        cursor: pointer;
+        padding: 18px 0;
+    }
+    
+    .fa-gratipay {
+        color: #f44336;
+    }
 </style>
 
 
@@ -374,208 +388,202 @@ transition:0.5s;
 
 <div class="content">
     <!-----------Header section--------->
-<section class="header" >
-    <nav>
-        <a href="home.html"><img src="{%static 'images/logo-removebg-preview.png' %}" style="width:300px"></a>
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i>
-            <ul>
-            <li><a href="/">HOME</a></li>
-            <li><a href="">SHOP</a></li> 
-            <li><a href="">CART</a></li>
-            <li><a href="{% url 'about' %}">ABOUT US</a></li>
-            <li><a href="{% url 'contact' %}">CONTACT US</a></li>
-            <li><a href="/accounts/register/">REGISTER</a></li>
-            <li><a href="/accounts/login/">LOGIN</a></li>
-        </ul>
+    <section class="header">
+        <nav>
+            <a href="home.html"><img src="{%static 'images/logo-removebg-preview.png' %}" style="width:300px"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="">SHOP</a></li>
+                    <li><a href="">CART</a></li>
+                    <li><a href="{% url 'about' %}">ABOUT US</a></li>
+                    <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+                    <li><a href="/accounts/register/">REGISTER</a></li>
+                    <li><a href="/accounts/login/">LOGIN</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Shully collection</h1>
+            <p>Welcome to Shully collection where you can get the best stuffed animals in KENYA.<br>They will surely make your room feel warmer.<br> Time to change your HOUSE to a HOME by adding the TOUCH the is missing. </p>
+            <a href="{% url 'contact' %}" class="hero-btn">Contact us for more information</a>
         </div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
-  <div class="text-box">
-      <h1>Shully collection</h1>
-      <p>Welcome to Shully collection where you can get the best stuffed animals in KENYA.<br>They will surely 
-          make your room feel warmer.<br> Time to change your HOUSE to a HOME by adding the TOUCH the is missing. </p>
-          <a href="{% url 'contact' %}" class="hero-btn">Contact us for more information</a>
-  </div>
-</section>
+    </section>
 
-  <!-----------course-------------->
-<section class="course">
-    <h1>Our products and Services</h1><br>
-    <p>Products and services you can enjoy within A dollhouse</p>
-      
-    <div class="row">
-      <div class="course-col">
-          <h3>Products</h3>
-          <p>  Deserunt labore pariatur aute ex mollit eu culpa. Non do minim nostrud ullamco amet nostrud est duis.<br>
-                Incididunt mollit enim magna proident fugiat consectetur laborum nulla.</p>
-       </div>
-       <div class="course-col">
-        <h3>services</h3>
-        <p>Minim pariatur aliquip sunt proident est deserunt velit nostrud dolor magna dolor commodo elit.<br>
-           Magna eu ut laborum consectetur minim consequat deserunt commodo excepteur ea aute.<br>
-        </p>
-       </div>
-   
-      <div class="course-col">
-        <h3>location</h3>
-        <p>  Deserunt labore pariatur aute ex mollit eu culpa. Non do minim nostrud ullamco amet nostrud est duis.<br>
-              Incididunt mollit enim magna proident fugiat consectetur laborum nulla.</p>
-    </div>
-   </div>
+    <!-----------course-------------->
+    <section class="course">
+        <h1>Our products and Services</h1><br>
+        <p>Products and services you can enjoy within A dollhouse</p>
 
-</section>
+        <div class="row">
+            <div class="course-col">
+                <h3>Products</h3>
+                <p> Deserunt labore pariatur aute ex mollit eu culpa. Non do minim nostrud ullamco amet nostrud est duis.<br> Incididunt mollit enim magna proident fugiat consectetur laborum nulla.</p>
+            </div>
+            <div class="course-col">
+                <h3>services</h3>
+                <p>Minim pariatur aliquip sunt proident est deserunt velit nostrud dolor magna dolor commodo elit.<br> Magna eu ut laborum consectetur minim consequat deserunt commodo excepteur ea aute.<br>
+                </p>
+            </div>
 
-<!----------------our products-------------->
-<section class="products">
-    <h1>Our best selling products</h1>
-    <p>Below are some of the best selling products in a Dollhouse</p>
-      <div class="row">
-          <div class="products-col">
-              <img src="{%static 'images/dollhouse3.jpg' %}" alt="error">
-              <div class="layer">
-                  <h3>Dolls</h3>
-              </div>
-          </div>
-
-          <div class="products-col">
-            <img src="{%static 'images/africanhandbag.jpeg' %}" alt="error" style="height:45vh;">
-            <div class="layer">
-                <h3>African bags</h3>
+            <div class="course-col">
+                <h3>location</h3>
+                <p> Deserunt labore pariatur aute ex mollit eu culpa. Non do minim nostrud ullamco amet nostrud est duis.<br> Incididunt mollit enim magna proident fugiat consectetur laborum nulla.</p>
             </div>
         </div>
 
-        <div class="products-col">
-            <img src="{%static 'images/jewellary3.jpg' %}" alt="error">
-            <div class="layer">
-                <h3>african jewellary</h3>
+    </section>
+
+    <!----------------our products-------------->
+    <section class="products">
+        <h1>Our best selling products</h1>
+        <p>Below are some of the best selling products in a Dollhouse</p>
+        <div class="row">
+            <div class="products-col">
+                <img src="{%static 'images/dollhouse3.jpg' %}" alt="error">
+                <div class="layer">
+                    <h3>Dolls</h3>
+                </div>
             </div>
-        </div>
 
-      </div>
+            <div class="products-col">
+                <img src="{%static 'images/africanhandbag.jpeg' %}" alt="error" style="height:45vh;">
+                <div class="layer">
+                    <h3>African bags</h3>
+                </div>
+            </div>
 
-</section>
-
-
-<section class="gallery">
-    <h3 style="font-size:50px;">our gallery</h3>
-    <p>Velit elit magna aliquip esse amet commodo esse anim occaecat.</p>
-
-    <div class="row">
-        <div class="gallery-col">
-            <a href="{%static 'images/masaishuka.jpeg' %}" data-lightbox="models" data-title="masai Shuka">
-             <img src="{%static 'images/masaishuka.jpeg' %}" alt="error">
-            </a>
-           
-            <a href="{%static 'images/africanhandbag2.jpeg' %}" data-lightbox="models" data-title="cAfrican handbag">
-                <img src="{%static 'images/africanhandbag2.jpeg' %}" alt="error">
-               </a>
-            
-               <a href="{%static 'images/jewellary3.jpg' %}" data-lightbox="models" data-title="African jewellary">
+            <div class="products-col">
                 <img src="{%static 'images/jewellary3.jpg' %}" alt="error">
-               </a>
-
-               <a href="{%static 'images/kenyanjewellary2.jpeg' %}"  style="height:30vh;" data-lightbox="models" data-title="African touch">
-                <img src="{%static 'images/kenyanjewellary2.jpeg' %}" alt="error">
-               </a>
-            
-               <a href="{%static 'images/dollhouse4.jpg' %}" data-lightbox="models" data-title="warm feeling">
-                <img src="{%static 'images/dollhouse4.jpg' %}" alt="error">
-               </a>
-
-               <a href="{%static 'images/masaishuka.jpg' %}" data-lightbox="models" data-title="Masaai collection">
-                <img src="{%static 'images/masaishuka.jpg' %}" alt="error">
-               </a>
-              
-            
-
-        </div>
-
-    </div>
-<script src="{% static 'lightbox-plus-jquery.js' %}"></script>
-</section>
-
-<!--------Testimonials------>
-<section class="testimonials">
-    <h1>What our customers say</h1>
-    <p>Excepteur culpa voluptate deserunt qui.</p>
-    <div class="row">
-        <div class="testimonials-col">
-            <img src="{% static 'images/user1.jpg' %}" alt="error">
-            <div>
-                <p>
-                    Sit ex cillum est esse qui tempor aliqua anim elit elit.
-                     Lorem velit Lorem elit est pariatur. Culpa Lorem eu deserunt aute non nostrud.
-                      Sunt officia qui pariatur ipsum cupidatat consequat duis non laborum id tempor aliqua reprehenderit culpa. 
-                      
-                </p>
-                <h3>Michael Uhomosi </h3>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
+                <div class="layer">
+                    <h3>african jewellary</h3>
+                </div>
             </div>
 
         </div>
 
-        <div class="testimonials-col">
-            <img src="{% static 'images/user2.jpg' %}" alt="error">
-            <div>
-                <p>
-                    Sit ex cillum est esse qui tempor aliqua anim elit elit.
-                     Lorem velit Lorem elit est pariatur. Culpa Lorem eu deserunt aute non nostrud.
-                      Sunt officia qui pariatur ipsum cupidatat consequat duis non laborum id tempor aliqua reprehenderit culpa. 
-                     
-                </p>
-                <h3>Hudson Armstrong</h3>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half"></i>
+    </section>
+
+
+    <section class="gallery">
+        <h3 style="font-size:50px;">our gallery</h3>
+        <p>Velit elit magna aliquip esse amet commodo esse anim occaecat.</p>
+
+        <div class="row">
+            <div class="gallery-col">
+                <a href="{%static 'images/masaishuka.jpeg' %}" data-lightbox="models" data-title="masai Shuka">
+                    <img src="{%static 'images/masaishuka.jpeg' %}" alt="error">
+                </a>
+
+                <a href="{%static 'images/africanhandbag2.jpeg' %}" data-lightbox="models" data-title="cAfrican handbag">
+                    <img src="{%static 'images/africanhandbag2.jpeg' %}" alt="error">
+                </a>
+
+                <a href="{%static 'images/jewellary3.jpg' %}" data-lightbox="models" data-title="African jewellary">
+                    <img src="{%static 'images/jewellary3.jpg' %}" alt="error">
+                </a>
+
+                <a href="{%static 'images/kenyanjewellary2.jpeg' %}" style="height:30vh;" data-lightbox="models" data-title="African touch">
+                    <img src="{%static 'images/kenyanjewellary2.jpeg' %}" alt="error">
+                </a>
+
+                <a href="{%static 'images/dollhouse4.jpg' %}" data-lightbox="models" data-title="warm feeling">
+                    <img src="{%static 'images/dollhouse4.jpg' %}" alt="error">
+                </a>
+
+                <a href="{%static 'images/masaishuka.jpg' %}" data-lightbox="models" data-title="Masaai collection">
+                    <img src="{%static 'images/masaishuka.jpg' %}" alt="error">
+                </a>
+
+
+
+            </div>
+
+        </div>
+        <script src="{% static 'lightbox-plus-jquery.js' %}"></script>
+    </section>
+
+    <!--------Testimonials------>
+    <section class="testimonials">
+        <h1>What our customers say</h1>
+        <p>Excepteur culpa voluptate deserunt qui.</p>
+        <div class="row">
+            <div class="testimonials-col">
+                <img src="{% static 'images/user1.jpg' %}" alt="error">
+                <div>
+                    <p>
+                        Sit ex cillum est esse qui tempor aliqua anim elit elit. Lorem velit Lorem elit est pariatur. Culpa Lorem eu deserunt aute non nostrud. Sunt officia qui pariatur ipsum cupidatat consequat duis non laborum id tempor aliqua reprehenderit culpa.
+
+                    </p>
+                    <h3>Michael Uhomosi </h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+
+            </div>
+
+            <div class="testimonials-col">
+                <img src="{% static 'images/user2.jpg' %}" alt="error">
+                <div>
+                    <p>
+                        Sit ex cillum est esse qui tempor aliqua anim elit elit. Lorem velit Lorem elit est pariatur. Culpa Lorem eu deserunt aute non nostrud. Sunt officia qui pariatur ipsum cupidatat consequat duis non laborum id tempor aliqua reprehenderit culpa.
+
+                    </p>
+                    <h3>Hudson Armstrong</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+                </div>
+
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<section class="cta">
-    <h1>Get our products at the comfort of your home <br>and enjoy all that dollhouse has to offer.</h1>
-    <a href="{% url 'about' %}" class="hero-btn2">CONTACT US</a>
-</section>
+    <section class="cta">
+        <h1>Get our products at the comfort of your home <br>and enjoy all that dollhouse has to offer.</h1>
+        <a href="{% url 'about' %}" class="hero-btn2">CONTACT US</a>
+    </section>
 
- <!---------- footer---------->
- <section class="footer">
-     <h4>About us</h4>
-     <p style="color:white;">Lorem sint dolor id cupidatat do elit eu. Nisi ad cupidatat quis veniam culpa minim in. <br>
-         Adipisicing duis laborum reprehenderit cillum excepteur anim eiusmod Lorem Lorem quis aliquip adipisicing.<br>  Et ex nisi ad nostrud nulla qui sunt laborum minim veniam culpa exercitation excepteur.<br>
-    </p>
-    <div class="icons">
-        <i class="fa fa-facebook"></i>
-        <i class="fa fa-twitter"></i>
-        <i class="fa fa-instagram"></i>
-        <i class="fa fa-linkedin"></i>
-        
-    </div>
-  <p style="color:white;">Made with <i class="fa fa-gratipay"></i> by Mumo254</p>
- </section>
+    <!---------- footer---------->
+    <section class="footer">
+        <h4>About us</h4>
+        <p style="color:white;">Lorem sint dolor id cupidatat do elit eu. Nisi ad cupidatat quis veniam culpa minim in. <br> Adipisicing duis laborum reprehenderit cillum excepteur anim eiusmod Lorem Lorem quis aliquip adipisicing.<br> Et ex nisi ad nostrud nulla qui sunt laborum
+            minim veniam culpa exercitation excepteur.<br>
+        </p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+
+        </div>
+        <p style="color:white;">Made with <i class="fa fa-gratipay"></i> by Mumo254</p>
+    </section>
 
 
 
- <!---- javascript for Toogle menu ---->
- <script>
-     var navLinks = document.getElementById("navLinks");
-     function showMenu(){
-         navLinks.style.right = "0";
-     }
-     function hideMenu(){
-         navLinks.style.right = "-400px";
-     }
- </script>
+    <!---- javascript for Toogle menu ---->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-400px";
+        }
+    </script>
 
 
 
